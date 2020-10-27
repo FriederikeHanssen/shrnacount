@@ -1,5 +1,5 @@
 # nf-core/shrnacount: Documentation
-
+To be added
 The nf-core/shrnacount documentation is split into the following pages:
 
 <!-- TODO nf-core: If you write more documentation pages, add them to the docs index page here -->
