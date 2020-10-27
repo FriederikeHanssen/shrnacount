@@ -119,6 +119,14 @@ if (params.input_paths) {
         .fromFilePairs(params.input, size: params.single_end ? 1 : 2)
         .ifEmpty { exit 1, "Cannot find any reads matching: ${params.input}\nNB: Path needs to be enclosed in quotes!\nIf this is single-end data, please specify --single_end on the command line." }
         .into { ch_read_files_fastqc; ch_read_files_trimming }
+    exit 1
+}
+
+if(params.libraries_path) {
+    Channel
+    .from(params.libraries_path)
+    .ifEmpty { exit 1, "params.libraries_path was empty - no input files supplied" }
+    .into { ch_libraries }
 }
 
 // Header log info
